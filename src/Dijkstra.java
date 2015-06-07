@@ -8,6 +8,7 @@ public class Dijkstra {
     Graph graph;
     int s;
     int n;
+    int maxValue=9999999;
 
     public Dijkstra( Graph graph, int d, int s ) {
         this.graph = graph;
@@ -25,10 +26,11 @@ public class Dijkstra {
     private void init() {
         for ( int i = 0; i < n; i ++ ) {
             up [i] = -1;
-            dist [i] = Integer.MAX_VALUE;
+            dist [i] = maxValue;
             index [i] = i;
             name [i] = i;
-            key [i] = Integer.MAX_VALUE;
+            key [i] = maxValue
+            ;
         }
         key [s] = 0;
         dheap.formDHeap();
@@ -48,7 +50,7 @@ public class Dijkstra {
             for (int j = 0; j < adj.length; j ++) {
                 if (adj [j] >= 0) {
                     jq = index [j];
-                    if (dist [j] == Integer.MAX_VALUE) {
+                    if (dist [j] == maxValue) {
                         if (key [jq] > dist [i] + adj [j]) {
                             key [jq] = dist [i] + adj [j];
                             dheap.SiftUp (jq);

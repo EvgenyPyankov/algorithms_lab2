@@ -4,9 +4,9 @@ public class Graph {
     int n;
 
     public Graph(int[][]adjacencyMatrix, int m, int n){
-        this.adjacencyMatrix=adjacencyMatrix;
         this.m=m;
         this.n=n;
+        this.adjacencyMatrix=adjacencyMatrix;
     }
 
      void printGraph(){
@@ -20,7 +20,7 @@ public class Graph {
     }
 
     public String getGraphInfo(){
-        return "amount of adges = "+m +"\namout of verticies = "+n+"\nmax amout of adges = "+n*(n-1)/2;
+        return "amount of edges = "+m +"\namout of verticies = "+n+"\nmax amout of edges = "+n*(n-1)/2;
     }
 
     public int getN(){

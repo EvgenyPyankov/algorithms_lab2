@@ -4,6 +4,7 @@ public class FordBellman {
     Graph graph;
     int s;
     int n;
+    int maxValue=9999999;
 
     public FordBellman( Graph graph, int s ) {
         this.graph = graph;
@@ -17,7 +18,7 @@ public class FordBellman {
     private void init() {
         for (int i = 0; i < n; i ++) {
             up [i] = -1;
-            dist [i] = Integer.MAX_VALUE;
+            dist [i] = maxValue;
         }
         dist [s] = 0;
     }
