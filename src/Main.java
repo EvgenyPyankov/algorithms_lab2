@@ -11,17 +11,17 @@ public class Main {
 //        Graph graph = GraphGenerator.generateGraph(n,m,q,r, COEFFICIENT1);
 //        System.out.println(graph.getGraphInfo());
 //        graph.printGraph();
-        int[][]matrix = {
-               {-1,7,9,-1,-1,14},
-               {-1,-1,10,15,-1,-1},
-               {-1,-1,-1,11,-1,2},
-               {-1,-1,-1,-1,-1},
-               {-1,-1,-1,6,-1,-1},
-               {-1,-1,-1,-1,9,-1}
-       };
+//        int[][]matrix = {
+//               {-1,7,9,-1,-1,14},
+//               {-1,-1,10,15,-1,-1},
+//               {-1,-1,-1,11,-1,2},
+//               {-1,-1,-1,-1,-1},
+//               {-1,-1,-1,6,-1,-1},
+//               {-1,-1,-1,-1,9,-1}
+//       };
 
         int n1=1;
-        int n2=1002;
+        int n2=802;
         int step=100;
 
         while(n1<n2){
@@ -29,7 +29,7 @@ public class Main {
             Graph graph2 = GraphGenerator.generateGraph(n1,q,r,COEFFICIENT1);
             Dijkstra dijkstra1 = new Dijkstra(graph1,d,s);
             Dijkstra dijkstra2 = new Dijkstra(graph2,d,s);
-            FordBellman fb1 = new FordBellman(graph1,0);
+           FordBellman fb1 = new FordBellman(graph1,0);
             FordBellman fb2 = new FordBellman(graph2,0);
 
             long start1 = System.currentTimeMillis();
@@ -47,8 +47,8 @@ public class Main {
             long start4 = System.currentTimeMillis();
             fb2.runFordBellman();
             long end4 = System.currentTimeMillis();
-
-            System.out.println(n1+": "+(end1-start1)+"  "+(end2-start2)+"  "+(end3-start3)+"  "+(end4-start4));
+            //System.out.println(end4-start4);
+            System.out.println(n1+" vertices: "+(end1-start1)+"  "+(end2-start2)+"  "+(end3-start3)+"  "+(end4-start4));
             n1+=step;
         }
 //        Graph graph = GraphGenerator.generateGraph(n,q,r, COEFFICIENT1);
